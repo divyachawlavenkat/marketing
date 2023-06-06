@@ -8,8 +8,13 @@ import java.util.*;
 
 @Service
 public class CustomerServiceImpl implements CustomerService {
-    @Autowired
-   CustomerRepository customerRepository;
+
+   private final CustomerRepository customerRepository;
+
+   @Autowired
+    public CustomerServiceImpl(CustomerRepository customerRepository) {
+       this.customerRepository = customerRepository;
+    }
 
 
     @Override
